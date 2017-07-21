@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "AddNewIssue";
+}
+
+<div class="row well">
+    <h2>Add New Issue</h2>
+    <form method="post" action="/Home/AddNewIssue">
+        <textarea class="form-control" name="note">Note</textarea>
+        <input type="hidden" name="OrderId" value="@Model.order.id" />
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

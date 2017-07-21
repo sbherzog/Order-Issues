@@ -1,0 +1,39 @@
+﻿@using OrderIssues.Data;
+@{
+    ViewBag.Title = "IssuesByOrderId";
+}
+
+<div class="row">
+    <h2>Issues for Order <strong>@Model.order.title</strong> placed on @Model.order.date.ToShortDateString()</h2>
+    <br />
+    <a class="btn btn-primary" href="/home/AddNewIssue/?orderId=@Model.order.id" style="margin-bottom: 25px;">Add New Issue</a>
+    <br />
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr >
+                <th>Order Title</th>
+                <th>Note</th>
+                <th>Resolved</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Issue i in Model.issue)
+            {
+                <tr data-issue-id="@i.id">
+                    <td>@i.Order.title</td>
+                    <td>@i.note</td>
+                    <td>@i.resolved</td>
+                    <td>
+                        <a class="btn btn-primary btn-Mark-Resolved">Mark as Completed</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script src="/Scripts/my_JS_file.js"></script>
+}

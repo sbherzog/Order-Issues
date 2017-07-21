@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AddnewOrder";
+}
+
+<div class="row well">
+    <h2>Add new Order</h2>
+    <form method="post" action="/Home/AddnewOrder">
+        <input type="text" placeholder="Title" name="title" class="form-control" />
+        <br />
+        <input type="text" placeholder="Amount" name="amount" class="form-control" />
+        <br />
+        <input type="date" placeholder="Date" name="date" class="form-control" />
+        <br />
+        <label>Completed
+            <input type="checkbox" name="completed" value="true" />
+        </label>
+        <input type="hidden" name="completed" value="false" class="form-control" />
+        <br /><br />
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
